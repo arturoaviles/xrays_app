@@ -1,28 +1,35 @@
-Para descargar el Proyecto
-git clone liga-del-proyecto
-git pull 				(Actualizar)
+#Para Descargar el proyecto
+```
+git clone https://github.com/arturoaviles/xrays_app
+```
 
+#Para Descargar los cambios que otros han hecho
+```
+git pull
+```
 
+#Para Agregar algo al Proyecto
+```
 1) git branch [name of your branch]     (Try to name it as a feature example: reminders)
 2) git checkout [name of your branch]
-
-
-
-Add code (Make some magic!)
-
+3) Add code (Make some magic!)
+```
 
 You app runs?								You fuck up and want to restart what you have done?
+```
+4) git status										git checkout master
+5) git add [files you changed] ó .					git branch -d [name of your branch]	 
+6) git commit -m "(Adds or Changes...)"					
+7) git push origin [name of your branch]
+```
 
-3) git status
-4) git add [files you changed] o .						git reset —-hard (Hazla en TU BRANCH!!!!) 
-5) git commit -m "(Adds or Changes...)"					git branch -d [name of your branch]
-6) git push origin [name of your branch]
+You think your new feature is well enough to be in the master branch?
+```
+8) Go to: https://github.com/arturoaviles/xrays_app
+9) Click Compare Pull Request
+10) Select your branch
+11) Enter title and description
+12) Click Create Pull Request
+```
 
-You think your new feature is well enough 
-to be in the master branch?
-
-7) Go to: https://github.com/arturoaviles/xrays_app
-8) Click Pull Request
-9) Select your branch
-10) Enter title and description
-11) Click Send pull request
+*The Admin will check the things you added! ;)*
