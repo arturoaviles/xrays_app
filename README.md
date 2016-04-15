@@ -21,7 +21,7 @@ git checkout master
 git branch -d [name of your branch]
 ```
 
-You app *runs*?
+You app **runs**?
 ```
 4) git status										
 5) git add [files you changed] ó .						 
@@ -29,7 +29,7 @@ You app *runs*?
 7) git push origin [name of your branch]
 ```
 
-You think your new feature is *well enough* to be in the master branch?
+You think your new feature is **well enough** to be in the master branch?
 ```
 8) Go to: https://github.com/arturoaviles/xrays_app
 9) Click Compare Pull Request
@@ -38,7 +38,7 @@ You think your new feature is *well enough* to be in the master branch?
 12) Click Create Pull Request
 ```
 
-*The Admin will check the things you added! ;)*
+**The Admin will check the things you added! ;)**
 
 What can you do next?
 
