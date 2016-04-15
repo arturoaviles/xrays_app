@@ -18,7 +18,8 @@ git pull
 You **fuck up** and want to **restart** what you have done?
 ```
 git checkout master
-git branch -d [name of your branch]
+git branch -d [name of your branch]  (It deletes the branch)
+git branch [name of your branch]  (Go to Step 2)
 ```
 
 You app **runs**?
