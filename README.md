@@ -15,7 +15,7 @@ git pull
 3) Add code (Make some magic!)
 ```
 
-#You fuck up and want to restart what you have done?
+You **fuck up** and want to **restart** what you have done?
 ```
 git checkout master
 git branch -d [name of your branch]
