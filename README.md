@@ -17,6 +17,7 @@ git pull
 
 You **fuck up** and want to **restart** what you have done?
 ```
+git reset --hard
 git checkout master
 git branch -d [name of your branch]  (It deletes the branch)
 git branch [name of your branch]  (Go to Step 2)
