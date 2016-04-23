@@ -49,7 +49,8 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         
                 // Verify user is logged into Dropbox
-        if let client = Dropbox.authorizedClient {
+        self.actualizarDropbox()
+        /* if let client = Dropbox.authorizedClient {
             
             // Get the current user's account info
             client.users.getCurrentAccount().response { response, error in
@@ -84,7 +85,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 }
             }
             
-        }
+        }*/
         
         
         // Do any additional setup after loading the view.
@@ -151,6 +152,51 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Dropbox
+    
+    func actualizarDropbox() {
+        self.imagesArray.removeAll()
+        self.filteredImages.removeAll()
+        self.tableView.reloadData()
+        // Verify user is logged into Dropbox
+        if let client = Dropbox.authorizedClient {
+            
+            // Get the current user's account info
+            client.users.getCurrentAccount().response { response, error in
+                //print("*** Get current account ***")
+                if let account = response {
+                    print("Hello \(account.name.givenName)!")
+                } else {
+                    print(error!)
+                }
+            }
+            
+            // List folder
+            client.files.listFolder(path: "").response { response, error in
+                //print("*** List folder ***")
+                if let result = response {
+                    //print("Folder contents:")
+                    
+                    for entry in result.entries {
+                        print(entry.name)
+                        
+                        //Filtro para mostrar solamente imagenes
+                        if entry.name.hasSuffix(".jpg") || entry.name.hasSuffix(".png")||entry.name.hasSuffix(".jpeg") {
+                            //Agrega nombre de la imagen a la tabla
+                            //self.imgArray.append(entry.name)
+                            self.imagesArray += [ImageItem(name: entry.name)]
+                        }
+                        //Actualiza la tabla con los nuevos elementos
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    print(error!)
+                }
+            }
+            
+        }
+    }
+    
 
 
     // MARK: - Table view data source
@@ -193,19 +239,13 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     
     
-    func filterContenctsForSearchText(searchText: String, scope: String = "Title")
-    {
-        
+    func filterContenctsForSearchText(searchText: String, scope: String = "Title"){
         self.filteredImages = self.imagesArray.filter({( image :ImageItem) -> Bool in
-            
             let categoryMatch = (scope == "Title")
             let stringMatch = image.name.lowercaseString.rangeOfString(searchText.lowercaseString)
-            
             return categoryMatch && (stringMatch != nil)
-            
         })
-        
-        
+
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool
@@ -265,9 +305,14 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         
         cell.textLabel?.text = image.name
-        
+        //cruzrojaradiografias@gmail.com
         
         return cell
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("Didappear")
+        self.actualizarDropbox()
     }
 
 

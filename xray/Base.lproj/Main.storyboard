@@ -53,6 +53,10 @@
                                     <outlet property="delegate" destination="d9E-yO-VEe" id="OWe-hH-SOn"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khz-Gn-u2e">
+                                <rect key="frame" x="512" y="20" width="68" height="30"/>
+                                <state key="normal" title="Actualizar"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
