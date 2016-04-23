@@ -47,49 +47,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         self.tableView.reloadData() //Carga la tabla con las
                                     //imagenes encontradas
         
-        
-                // Verify user is logged into Dropbox
-        //self.actualizarDropbox()
-        /* if let client = Dropbox.authorizedClient {
-            
-            // Get the current user's account info
-            client.users.getCurrentAccount().response { response, error in
-                //print("*** Get current account ***")
-                if let account = response {
-                    print("Hello \(account.name.givenName)!")
-                } else {
-                    print(error!)
-                }
-            }
-            
-            // List folder
-            client.files.listFolder(path: "").response { response, error in
-                //print("*** List folder ***")
-                if let result = response {
-                    //print("Folder contents:")
-                
-                    for entry in result.entries {
-                        print(entry.name)
-                        
-                        //Filtro para mostrar solamente imagenes
-                        if entry.name.hasSuffix(".jpg") || entry.name.hasSuffix(".png")||entry.name.hasSuffix(".jpeg") {
-                            //Agrega nombre de la imagen a la tabla
-                            //self.imgArray.append(entry.name)
-                            self.imagesArray += [ImageItem(name: entry.name)]
-                        }
-                        //Actualiza la tabla con los nuevos elementos
-                        self.tableView.reloadData()
-                    }
-                } else {
-                    print(error!)
-                }
-            }
-            
-        }*/
-        
-        
-        // Do any additional setup after loading the view.
-        
         reach = Reachability.reachabilityForInternetConnection()
         
         reach!.reachableBlock = {
@@ -194,7 +151,22 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     print(error!)
                 }
             }
+            if imagesArray.isEmpty == true  {
+                let alerta = UIAlertController(title: "Vacio", message: "No hay imagenes en la cuenta", preferredStyle: .Alert)
+                let accionAceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: { (accion: UIAlertAction) -> Void in
+                    //
+                })
+                let accionBorrar = UIAlertAction(title: "Salir", style: .Destructive, handler: {(accion:UIAlertAction) -> Void in
+                    //Salir de la aplicacion
+                    exit(0)
+                })
+                alerta.addAction(accionAceptar)
+                alerta.addAction(accionBorrar)
+                self.presentViewController(alerta, animated: true, completion: nil)
+            }
             
+        } else {
+            print("No hay cuenta vinculada")
         }
     }
     
