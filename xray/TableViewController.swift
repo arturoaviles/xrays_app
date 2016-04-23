@@ -29,10 +29,10 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         // Pruebas Navigation Items
         
         //let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        //let rightButton = UIBarButtonItem(title: "Right Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        let rightButton = UIBarButtonItem(title: "Actualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TableViewController.actualizarDropbox))
         
         //self.tabBarController?.navigationItem.leftBarButtonItem = leftButton
-        //self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
+        self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
         
         //self.tabBarController?.navigationItem.prompt = "no mames"
         
@@ -49,7 +49,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         
                 // Verify user is logged into Dropbox
-        self.actualizarDropbox()
+        //self.actualizarDropbox()
         /* if let client = Dropbox.authorizedClient {
             
             // Get the current user's account info
@@ -155,6 +155,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     // MARK: - Dropbox
     
     func actualizarDropbox() {
+        print("Actualizar")
         self.imagesArray.removeAll()
         self.filteredImages.removeAll()
         self.tableView.reloadData()
