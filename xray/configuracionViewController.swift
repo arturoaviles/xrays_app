@@ -9,10 +9,11 @@
 import UIKit
 import SwiftyDropbox
 class configuracionViewController: UIViewController {
+    @IBOutlet weak var btnVincular: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,16 +25,19 @@ class configuracionViewController: UIViewController {
     
     @IBAction func desvincular(sender: AnyObject) {
         Dropbox.unlinkClient()
+        self.btnVincular.enabled = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        
-        
+    override func viewDidAppear(animated: Bool) {
+        if (Dropbox.authorizedClient) != nil {
+            self.btnVincular.enabled = false
+        } else {
+            self.btnVincular.enabled = true
+        }
     }
 
     

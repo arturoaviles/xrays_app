@@ -112,7 +112,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     // MARK: - Dropbox
     
     func actualizarDropbox() {
-        print("Actualizar")
         self.imagesArray.removeAll()
         self.filteredImages.removeAll()
         self.tableView.reloadData()
@@ -147,27 +146,47 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
                         //Actualiza la tabla con los nuevos elementos
                         self.tableView.reloadData()
                     }
+                    if self.imagesArray.isEmpty == true  {
+                        self.alerta(1)
+                    }
                 } else {
                     print(error!)
                 }
             }
-            if imagesArray.isEmpty == true  {
-                let alerta = UIAlertController(title: "Vacio", message: "No hay imagenes en la cuenta", preferredStyle: .Alert)
-                let accionAceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: { (accion: UIAlertAction) -> Void in
-                    //
-                })
-                let accionBorrar = UIAlertAction(title: "Salir", style: .Destructive, handler: {(accion:UIAlertAction) -> Void in
-                    //Salir de la aplicacion
-                    exit(0)
-                })
-                alerta.addAction(accionAceptar)
-                alerta.addAction(accionBorrar)
-                self.presentViewController(alerta, animated: true, completion: nil)
-            }
+            
             
         } else {
-            print("No hay cuenta vinculada")
+            self.alerta(2)
         }
+    }
+    
+    func alerta(num: Int){
+        var titulo = ""
+        var message = ""
+        switch num {
+        case 1:
+            titulo = "Vacio"
+            message = "No hay imagenes en la cuenta"
+            break
+        case 2:
+            titulo = "Cuenta"
+            message = "No hay cuenta vinculada"
+            break
+        default:
+            titulo = "Vacio"
+            message = "No hay imagenes en la cuenta"
+        }
+        let alerta = UIAlertController(title: titulo, message: message, preferredStyle: .Alert)
+        let accionAceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: { (accion: UIAlertAction) -> Void in
+            //
+        })
+        let accionBorrar = UIAlertAction(title: "Salir", style: .Destructive, handler: {(accion:UIAlertAction) -> Void in
+            //Salir de la aplicacion
+            exit(0)
+        })
+        alerta.addAction(accionAceptar)
+        alerta.addAction(accionBorrar)
+        self.presentViewController(alerta, animated: true, completion: nil)
     }
     
 
@@ -284,7 +303,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("Didappear")
         self.actualizarDropbox()
     }
 
