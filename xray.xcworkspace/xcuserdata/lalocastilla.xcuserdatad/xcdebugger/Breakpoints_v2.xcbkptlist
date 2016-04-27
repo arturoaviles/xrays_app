@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
             endingLineNumber = "184"
-            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkName = "alerta(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xray/ImgViewController.swift"
-            timestampString = "481954712.4765"
+            timestampString = "483477486.960373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
             endingLineNumber = "9"
-            landmarkName = "ImgViewController"
-            landmarkType = "3">
+            landmarkName = "contrastSlider(_:)"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -135,61 +135,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "xray/ImgViewController.swift"
-            timestampString = "481954712.4765"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "xray.ImgViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "xray"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lalocastilla/Desktop/xcode_projects/xray/xray/ImgViewController.swift"
-                  timestampString = "481955207.847634"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "252">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "xray.ImgViewController.viewDidLoad () -&gt; ()"
-                  moduleName = "xray"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lalocastilla/Desktop/xcode_projects/xray/xray/ImgViewController.swift"
-                  timestampString = "481955207.847935"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "292">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "xray/TableViewController.swift"
             timestampString = "482004207.840284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
             endingLineNumber = "171"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "alerta(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -205,7 +157,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "actualizarDropbox()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -100,23 +100,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngW-Mz-XZS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kup-St-CUA">
                                         <rect key="frame" x="282" y="345" width="37" height="37"/>
                                         <color key="color" red="0.35526185869999999" green="0.5079375894" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIL-VK-zPW">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="64" width="600" height="497"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="Voy-nh-k4C"/>
+                                            <constraint firstAttribute="height" constant="497" id="Voy-nh-k4C"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kup-St-CUA" firstAttribute="centerX" secondItem="JIL-VK-zPW" secondAttribute="centerX" id="A64-Eq-egh"/>
-                                    <constraint firstItem="kup-St-CUA" firstAttribute="centerY" secondItem="JIL-VK-zPW" secondAttribute="centerY" id="GsB-ce-nVZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="JIL-VK-zPW" secondAttribute="bottom" constant="-2" id="QJj-GH-80S"/>
+                                    <constraint firstItem="kup-St-CUA" firstAttribute="centerY" secondItem="JIL-VK-zPW" secondAttribute="centerY" constant="51" id="GsB-ce-nVZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="JIL-VK-zPW" secondAttribute="bottom" constant="-10" id="QJj-GH-80S"/>
                                     <constraint firstItem="JIL-VK-zPW" firstAttribute="centerX" secondItem="ngW-Mz-XZS" secondAttribute="centerX" id="ZBW-tU-j1I"/>
                                     <constraint firstItem="JIL-VK-zPW" firstAttribute="top" secondItem="ngW-Mz-XZS" secondAttribute="top" constant="64" id="ZZC-79-iRF"/>
                                     <constraint firstAttribute="trailing" secondItem="JIL-VK-zPW" secondAttribute="trailing" id="gOL-At-e1V"/>
@@ -126,11 +126,20 @@
                                     <outlet property="delegate" destination="ZDL-5N-dNu" id="wNi-8R-c2v"/>
                                 </connections>
                             </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="-0.5" maxValue="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zdt-Gt-7BI">
+                                <rect key="frame" x="18" y="559" width="564" height="31"/>
+                                <connections>
+                                    <action selector="contrastSlider:" destination="ZDL-5N-dNu" eventType="valueChanged" id="Q0M-fN-UWf"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zdt-Gt-7BI" firstAttribute="trailing" secondItem="MFd-g1-Xs3" secondAttribute="trailingMargin" id="DaN-pG-Hft"/>
                             <constraint firstItem="ngW-Mz-XZS" firstAttribute="leading" secondItem="MFd-g1-Xs3" secondAttribute="leading" id="LAd-YY-ejK"/>
-                            <constraint firstAttribute="bottom" secondItem="ngW-Mz-XZS" secondAttribute="bottom" constant="-104" id="r5A-W7-IF4"/>
+                            <constraint firstItem="Zdt-Gt-7BI" firstAttribute="top" secondItem="ngW-Mz-XZS" secondAttribute="bottom" constant="8" symbolic="YES" id="QeX-OV-WiM"/>
+                            <constraint firstItem="Zdt-Gt-7BI" firstAttribute="centerX" secondItem="MFd-g1-Xs3" secondAttribute="centerX" id="of6-na-NDF"/>
+                            <constraint firstAttribute="bottom" secondItem="ngW-Mz-XZS" secondAttribute="bottom" constant="49" id="r5A-W7-IF4"/>
                             <constraint firstAttribute="trailing" secondItem="ngW-Mz-XZS" secondAttribute="trailing" id="uHX-rk-10O"/>
                             <constraint firstItem="ngW-Mz-XZS" firstAttribute="top" secondItem="xKt-Tq-tCR" secondAttribute="bottom" constant="-64" id="unQ-7Q-77B"/>
                         </constraints>
@@ -140,6 +149,7 @@
                         <outlet property="activityIndicator" destination="kup-St-CUA" id="ahT-EB-BYY"/>
                         <outlet property="imgView" destination="JIL-VK-zPW" id="Jb9-Nc-F88"/>
                         <outlet property="scrollView" destination="ngW-Mz-XZS" id="TUt-XN-01H"/>
+                        <outlet property="slider" destination="Zdt-Gt-7BI" id="K5x-z3-fbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQE-Oj-qBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,13 +210,6 @@
                                     <action selector="desvincular:" destination="D3Q-eF-Mn9" eventType="touchUpInside" id="iSX-lW-NvU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKj-uW-1n0">
-                                <rect key="frame" x="20" y="100" width="218" height="30"/>
-                                <state key="normal" title="Vincular con cuenta de dropbox"/>
-                                <connections>
-                                    <action selector="vincular:" destination="D3Q-eF-Mn9" eventType="touchUpInside" id="RJd-zA-bfr"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuenta: cruzrojaradiografias@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmZ-Az-DhV">
                                 <rect key="frame" x="20" y="248" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -219,6 +222,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKj-uW-1n0">
+                                <rect key="frame" x="20" y="100" width="218" height="30"/>
+                                <state key="normal" title="Vincular con cuenta de dropbox"/>
+                                <connections>
+                                    <action selector="vincular:" destination="D3Q-eF-Mn9" eventType="touchUpInside" id="RJd-zA-bfr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -234,6 +244,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuración" id="Dah-cW-unm"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnVincular" destination="UKj-uW-1n0" id="106-5g-lTk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJD-eY-Z2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
