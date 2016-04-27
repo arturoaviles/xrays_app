@@ -53,10 +53,10 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             (let reach: Reachability!) -> Void in
             print("Hay red")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
+                /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
                 self.tabBarController?.navigationItem.title = "Estado: Conectado a internet"
                 self.lbEstado.text = "Estado: Conectado a internet"
-                self.lbEstado.textColor = UIColor.greenColor()
+                self.lbEstado.textColor = UIColor.greenColor()*/
                 self.tableView.allowsSelection = true;
             })
         }
@@ -65,8 +65,9 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             (let reach: Reachability!) -> Void in
             print("No hay RED")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
-                self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"
+                /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
+                self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"*/
+                self.alerta(3)
                 self.tableView.allowsSelection = false;
             })
         }
@@ -75,13 +76,14 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let estado = reach!.currentReachabilityStatus()
         if estado == NetworkStatus.NotReachable {
-            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
-            self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"
+            /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
+            self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"*/
+            self.alerta(3)
             tableView.allowsSelection = false;
 
         } else {
-            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
-            self.tabBarController?.navigationItem.title = "Estado: Conectado a internet"
+            /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
+            self.tabBarController?.navigationItem.title = "Estado: Conectado a internet"*/
             tableView.allowsSelection = true;
         }
 
@@ -172,6 +174,9 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             titulo = "Cuenta"
             message = "No hay cuenta vinculada"
             break
+        case 3:
+            titulo = "Internet"
+            message = "NO esta conectado a Internet"
         default:
             titulo = "Vacio"
             message = "No hay imagenes en la cuenta"
@@ -180,12 +185,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let accionAceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: { (accion: UIAlertAction) -> Void in
             //
         })
-        let accionBorrar = UIAlertAction(title: "Salir", style: .Destructive, handler: {(accion:UIAlertAction) -> Void in
-            //Salir de la aplicacion
-            exit(0)
-        })
         alerta.addAction(accionAceptar)
-        alerta.addAction(accionBorrar)
         self.presentViewController(alerta, animated: true, completion: nil)
     }
     
