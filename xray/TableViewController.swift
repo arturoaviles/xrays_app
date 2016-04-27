@@ -21,7 +21,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         var reach: Reachability?
         
-        self.title = "Title"
+        //self.title = "Title"
         
         let navigationBar = navigationController!.navigationBar
         navigationBar.tintColor = UIColor.blueColor()
@@ -38,8 +38,8 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
-        self.tabBarController?.navigationItem.title = "hey"
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
+        self.tabBarController?.navigationItem.title = "X-Ray"
         
         //self.navigationController?.navigationBar.barStyle.rawValue
         
