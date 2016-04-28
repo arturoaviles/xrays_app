@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "594BC4E31CB19C1000BE2E54"
-               BuildableName = "xray.app"
+               BuildableName = "Xray Analyzer.app"
                BlueprintName = "xray"
                ReferencedContainer = "container:xray.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "594BC4E31CB19C1000BE2E54"
-            BuildableName = "xray.app"
+            BuildableName = "Xray Analyzer.app"
             BlueprintName = "xray"
             ReferencedContainer = "container:xray.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "594BC4E31CB19C1000BE2E54"
-            BuildableName = "xray.app"
+            BuildableName = "Xray Analyzer.app"
             BlueprintName = "xray"
             ReferencedContainer = "container:xray.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "594BC4E31CB19C1000BE2E54"
-            BuildableName = "xray.app"
+            BuildableName = "Xray Analyzer.app"
             BlueprintName = "xray"
             ReferencedContainer = "container:xray.xcodeproj">
          </BuildableReference>

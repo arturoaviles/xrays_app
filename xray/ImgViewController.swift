@@ -33,6 +33,10 @@ class ImgViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        slider.enabled = false
+        
+        
+        
         
         //Define la escala máxima del zoom
         self.scrollView.maximumZoomScale = 6.0
@@ -83,6 +87,7 @@ class ImgViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
                                 self.imgView.image = imagen
                                 //self.globalImage = imagen
                                 self.activityIndicator.stopAnimating()
+                                self.slider.enabled = true
                             })
                             // el dispatch tambien se podria aplicar al texto
                             

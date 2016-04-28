@@ -1,5 +1,6 @@
 //
-
+//$(TARGET_NAME)
+//
 
 import UIKit
 import SwiftyDropbox
@@ -12,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Dropbox.setupWithAppKey("981dbuf27awat8k")
+        Dropbox.setupWithAppKey("7eprte9s8humvpk")
         /* Este AppKey se encuentra en la consola de aplicaciones.
            https://www.dropbox.com/developers/apps
          */

@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		45ABB1E962F68FDF302C4D83 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		594BC4E41CB19C1000BE2E54 /* xray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594BC4E41CB19C1000BE2E54 /* Xray Analyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xray Analyzer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		594BC4EC1CB19C1000BE2E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		594BC4EE1CB19C1000BE2E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		594BC4F11CB19C1000BE2E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		594BC4E51CB19C1000BE2E54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				594BC4E41CB19C1000BE2E54 /* xray.app */,
+				594BC4E41CB19C1000BE2E54 /* Xray Analyzer.app */,
 				594BC4F81CB19C1100BE2E54 /* xrayTests.xctest */,
 				594BC5031CB19C1100BE2E54 /* xrayUITests.xctest */,
 			);
@@ -190,7 +190,7 @@
 			);
 			name = xray;
 			productName = xray;
-			productReference = 594BC4E41CB19C1000BE2E54 /* xray.app */;
+			productReference = 594BC4E41CB19C1000BE2E54 /* Xray Analyzer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		594BC4F71CB19C1100BE2E54 /* xrayTests */ = {
@@ -513,7 +513,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itesm.developement.xray;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Xray Analyzer";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "xray/xray-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -532,7 +532,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itesm.developement.xray;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Xray Analyzer";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "xray/xray-Bridging-Header.h";
 			};

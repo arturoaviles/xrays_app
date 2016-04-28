@@ -15,6 +15,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var imagesArray = [ImageItem]() // Arreglo de todas las imagenes
     var filteredImages = [ImageItem]() //Arreglo imagenes filtradas
     let lbEstado = UILabel()
+    var rightButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         // Pruebas Navigation Items
         
         //let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        let rightButton = UIBarButtonItem(title: "Actualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TableViewController.actualizarDropbox))
+         rightButton = UIBarButtonItem(title: "Actualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TableViewController.actualizarDropbox))
         
         //self.tabBarController?.navigationItem.leftBarButtonItem = leftButton
         self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
@@ -39,7 +40,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
         
         //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
-        self.tabBarController?.navigationItem.title = "X-Ray"
+        self.tabBarController?.navigationItem.title = "Xray Analyzer"
         
         //self.navigationController?.navigationBar.barStyle.rawValue
         
@@ -304,7 +305,11 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     override func viewDidAppear(animated: Bool) {
         self.actualizarDropbox()
+        self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
     }
-
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+    }
 
 }
