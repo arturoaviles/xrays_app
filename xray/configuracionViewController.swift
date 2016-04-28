@@ -11,11 +11,16 @@ import SwiftyDropbox
 class configuracionViewController: UIViewController {
     @IBOutlet weak var btnVincular: UIButton!
     @IBOutlet weak var btnDesvincular: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func returning(sender: UIStoryboardSegue){
+        
     }
 
 
