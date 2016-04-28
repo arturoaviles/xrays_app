@@ -10,6 +10,7 @@ import UIKit
 import SwiftyDropbox
 class configuracionViewController: UIViewController {
     @IBOutlet weak var btnVincular: UIButton!
+    @IBOutlet weak var btnDesvincular: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +21,14 @@ class configuracionViewController: UIViewController {
 
     @IBAction func vincular(sender: AnyObject) {
         Dropbox.authorizeFromController(self)
-        
+        self.btnVincular.enabled = false
+        self.btnDesvincular.enabled = true
     }
     
     @IBAction func desvincular(sender: AnyObject) {
         Dropbox.unlinkClient()
         self.btnVincular.enabled = true
+        self.btnDesvincular.enabled = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,8 +38,10 @@ class configuracionViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         if (Dropbox.authorizedClient) != nil {
             self.btnVincular.enabled = false
+            self.btnDesvincular.enabled = true
         } else {
             self.btnVincular.enabled = true
+            self.btnDesvincular.enabled = false
         }
     }
 
