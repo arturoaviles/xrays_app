@@ -34,7 +34,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //self.tabBarController?.navigationItem.leftBarButtonItem = leftButton
         self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
         
-        //self.tabBarController?.navigationItem.prompt = "no mames"
+        //self.tabBarController?.navigationItem.prompt = "hola"
         
         //self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
         
@@ -172,7 +172,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             break
         case 2:
             titulo = "Cuenta"
-            message = "No hay cuenta vinculada"
+            message = "No hay cuenta vinculada. Ir a configuración."
             break
         case 3:
             titulo = "Internet"
