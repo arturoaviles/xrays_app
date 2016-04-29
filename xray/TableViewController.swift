@@ -29,20 +29,11 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         // Pruebas Navigation Items
         
-        //let leftButton =  UIBarButtonItem(title: "Left Button", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
          rightButton = UIBarButtonItem(title: "Actualizar", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TableViewController.actualizarDropbox))
         
-        //self.tabBarController?.navigationItem.leftBarButtonItem = leftButton
         self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
         
-        //self.tabBarController?.navigationItem.prompt = "hola"
-        
-        //self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
-        
-        //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
         self.tabBarController?.navigationItem.title = "Xray Analyzer"
-        
-        //self.navigationController?.navigationBar.barStyle.rawValue
         
         
         self.tableView.reloadData() //Carga la tabla con las
@@ -54,10 +45,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             (let reach: Reachability!) -> Void in
             print("Hay red")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
-                self.tabBarController?.navigationItem.title = "Estado: Conectado a internet"
-                self.lbEstado.text = "Estado: Conectado a internet"
-                self.lbEstado.textColor = UIColor.greenColor()*/
                 self.tableView.allowsSelection = true;
             })
         }
@@ -66,8 +53,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
             (let reach: Reachability!) -> Void in
             print("No hay RED")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
-                self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"*/
                 self.alerta(3)
                 self.tableView.allowsSelection = false;
             })
@@ -77,14 +62,10 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let estado = reach!.currentReachabilityStatus()
         if estado == NetworkStatus.NotReachable {
-            /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
-            self.tabBarController?.navigationItem.title = "Estado: Sin conexión a internet"*/
             self.alerta(3)
             tableView.allowsSelection = false;
 
         } else {
-            /*self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.greenColor()]
-            self.tabBarController?.navigationItem.title = "Estado: Conectado a internet"*/
             tableView.allowsSelection = true;
         }
 
@@ -143,7 +124,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
                         //Filtro para mostrar solamente imagenes
                         if entry.name.hasSuffix(".jpg") || entry.name.hasSuffix(".png")||entry.name.hasSuffix(".jpeg") {
                             //Agrega nombre de la imagen a la tabla
-                            //self.imgArray.append(entry.name)
                             self.imagesArray += [ImageItem(name: entry.name)]
                         }
                         //Actualiza la tabla con los nuevos elementos
@@ -156,8 +136,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     print(error!)
                 }
             }
-            
-            
+       
         } else {
             self.alerta(2)
         }
@@ -184,7 +163,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
         let alerta = UIAlertController(title: titulo, message: message, preferredStyle: .Alert)
         let accionAceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: { (accion: UIAlertAction) -> Void in
-            //
         })
         alerta.addAction(accionAceptar)
         self.presentViewController(alerta, animated: true, completion: nil)
@@ -298,7 +276,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         
         cell.textLabel?.text = image.name
-        //cruzrojaradiografias@gmail.com
         
         return cell
     }
