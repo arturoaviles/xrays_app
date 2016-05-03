@@ -18,12 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UuK-kY-exX">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-Qg-MxU">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaImagen" textLabel="2hi-Aj-Ec5" style="IBUITableViewCellStyleDefault" id="DgX-9F-XlR">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DgX-9F-XlR" id="S6o-xS-UZm">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -68,6 +72,7 @@
                     <tabBarItem key="tabBarItem" title="Imágenes" image="picture-32" id="xvO-Fj-Yev"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="progressIndicator" destination="UuK-kY-exX" id="iYP-ML-wzL"/>
                         <outlet property="searchBar" destination="fek-9c-vic" id="qkH-OR-Dzu"/>
                         <outlet property="searchDisplayController" destination="1pm-kP-3JO" id="A9D-Gq-QLG"/>
                         <outlet property="tableView" destination="zzd-Qg-MxU" id="CKb-Mh-dDX"/>

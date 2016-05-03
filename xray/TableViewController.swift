@@ -11,6 +11,8 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
+    
     //Probando branch
     var imagesArray = [ImageItem]() // Arreglo de todas las imagenes
     var filteredImages = [ImageItem]() //Arreglo imagenes filtradas
@@ -96,6 +98,14 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     // MARK: - Dropbox
     
     func actualizarDropbox() {
+        
+        // Progress Indicator
+        progressIndicator.startAnimating()
+        progressIndicator.hidden = false
+        // Check the last part of this method
+        
+        self.rightButton!.enabled = false
+        self.tableView!.userInteractionEnabled = false
         self.imagesArray.removeAll()
         self.filteredImages.removeAll()
         self.tableView.reloadData()
@@ -140,6 +150,14 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         } else {
             self.alerta(2)
         }
+        NSThread.sleepForTimeInterval(1)
+        
+        // Right here!
+        self.progressIndicator!.stopAnimating()
+        // Thats all
+        
+        self.rightButton!.enabled = true
+        self.tableView!.userInteractionEnabled = true
     }
     
     func alerta(num: Int){
