@@ -11,8 +11,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
-    
     //Probando branch
     var imagesArray = [ImageItem]() // Arreglo de todas las imagenes
     var filteredImages = [ImageItem]() //Arreglo imagenes filtradas
@@ -99,10 +97,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func actualizarDropbox() {
         
-        // Progress Indicator
-        progressIndicator.startAnimating()
-        progressIndicator.hidden = false
-        // Check the last part of this method
+        
         
         self.rightButton!.enabled = false
         self.tableView!.userInteractionEnabled = false
@@ -152,9 +147,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
         NSThread.sleepForTimeInterval(1)
         
-        // Right here!
-        self.progressIndicator!.stopAnimating()
-        // Thats all
+        
         
         self.rightButton!.enabled = true
         self.tableView!.userInteractionEnabled = true
