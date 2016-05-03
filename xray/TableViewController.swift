@@ -96,6 +96,11 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     // MARK: - Dropbox
     
     func actualizarDropbox() {
+        
+        
+        
+        self.rightButton!.enabled = false
+        self.tableView!.userInteractionEnabled = false
         self.imagesArray.removeAll()
         self.filteredImages.removeAll()
         self.tableView.reloadData()
@@ -140,6 +145,12 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         } else {
             self.alerta(2)
         }
+        NSThread.sleepForTimeInterval(1)
+        
+        
+        
+        self.rightButton!.enabled = true
+        self.tableView!.userInteractionEnabled = true
     }
     
     func alerta(num: Int){
